@@ -1,0 +1,405 @@
+/* Archivo: style.css (Actualizado) */
+
+/* ============================================== */
+/* NUEVOS ESTILOS DE NAVEGACIÓN */
+/* ============================================== */
+#navbar {
+	width: 100%;
+	background-color: #ffffff;
+	padding: 15px 30px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* Fija la barra en la parte superior */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+#navbar h1 {
+	font-size: 1.5em;
+	color: #007bff;
+	margin: 0;
+}
+
+#info-usuario-nav {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+#info-usuario-nav span {
+	font-weight: bold;
+	color: #333;
+}
+
+/* El botón de cerrar sesión en la barra de nav */
+#info-usuario-nav button {
+	background-color: #6c757d;
+	width: auto;
+	padding: 8px 15px;
+	margin: 0; /* Resetea el margen */
+}
+#info-usuario-nav button:hover {
+	background-color: #5a6268;
+}
+
+/* ============================================== */
+/* ESTILOS DEL CUERPO Y CONTENEDOR */
+/* ============================================== */
+body {
+	font-family: sans-serif;
+	background-color: #f4f7f6;
+	margin: 0;
+	/* Añade padding superior para dejar espacio a la navbar fija */
+	padding-top: 100px;
+}
+
+.contenedor-principal {
+	width: 100%;
+	max-width: 500px;
+	margin: 20px auto; /* Centra el contenedor */
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.card {
+	background-color: #ffffff;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	margin-top: 20px;
+}
+
+/* ============================================== */
+/* ESTILOS GENERALES (Sin cambios) */
+/* ============================================== */
+
+/* Estilos de Formulario y Botones */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+	width: 100%;
+	padding: 12px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-sizing: border-box;
+}
+
+button {
+	background-color: #007bff;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 16px;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+button:disabled {
+	background-color: #aaa;
+	cursor: not-allowed;
+}
+
+/* Estilos de la Billetera */
+.balances-usuario {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+}
+
+.balance-display {
+	flex: 1;
+	padding: 15px;
+	border-radius: 8px;
+	background-color: #f8f9fa;
+}
+
+.balance-aprobado {
+	border: 1px solid #28a745;
+}
+
+.balance-pendiente {
+	border: 1px solid #ffc107;
+}
+
+.monto-principal {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #28a745;
+	margin: 5px 0;
+}
+
+.monto-secundario {
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #ffc107;
+	margin: 5px 0;
+}
+
+.mensaje {
+	margin-top: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #f8f9fa;
+	text-align: left;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: #e0e0e0;
+	margin: 25px 0;
+}
+
+/* Estilos del Panel Admin */
+.admin-io {
+	background-color: #fdfdfd;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	margin-top: 15px;
+}
+.btn-guardar {
+	background-color: #28a745;
+}
+.btn-guardar:hover {
+	background-color: #218838;
+}
+
+#lista-pendientes {
+	text-align: left;
+}
+
+.item-pendiente {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin-bottom: 10px;
+}
+.item-pendiente span {
+	font-size: 0.9em;
+}
+.item-pendiente button {
+	width: auto;
+	padding: 8px 12px;
+	font-size: 0.9em;
+	margin: 0;
+	background-color: #28a745;
+}
+.item-pendiente button:hover {
+	background-color: #218838;
+}
+
+/* Archivo: style.css (Añadir al final) */
+
+/* ============================================== */
+/* NUEVO: ESTILOS DEL POPUP MODAL */
+/* ============================================== */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 2000;
+}
+
+.modal-contenido {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	width: 90%;
+	max-width: 450px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	position: relative;
+	text-align: left;
+}
+
+.modal-cerrar {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #aaa;
+	cursor: pointer;
+}
+.modal-cerrar:hover {
+	color: #333;
+}
+
+#popup-cuerpo p {
+	margin: 10px 0;
+	font-size: 1.1em;
+	line-height: 1.5;
+}
+#popup-cuerpo p strong {
+	color: #333;
+	display: inline-block;
+	min-width: 80px;
+}
+#popup-cuerpo .token-popup {
+	font-family: monospace;
+	font-size: 1.2em;
+	color: #007bff;
+	background: #f4f4f4;
+	padding: 8px;
+	border-radius: 5px;
+	word-break: break-all;
+}
+
+/* ============================================== */
+/* NUEVO: ESTILOS DEL HISTORIAL */
+/* ============================================== */
+#historial-transacciones {
+	max-height: 400px;
+	overflow-y: auto;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	padding: 10px;
+	text-align: left;
+}
+
+.item-historial {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.item-historial:last-child {
+	border-bottom: none;
+}
+
+.item-historial .info {
+	font-size: 0.9em;
+}
+.item-historial .info span {
+	display: block;
+	color: #666;
+}
+.item-historial .info .estado-pendiente {
+	color: #ffc107;
+	font-weight: bold;
+}
+.item-historial .info .estado-aprobado {
+	color: #28a745;
+	font-weight: bold;
+}
+
+.item-historial .monto-historial {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.item-historial .monto-deposito {
+	color: #28a745; /* Verde */
+}
+.item-historial .monto-retiro {
+	color: #dc3545; /* Rojo */
+}
+
+/* Re-usar estilos para el panel de admin */
+#lista-retiros-pendientes .item-pendiente button {
+	background-color: #007bff;
+}
+#lista-retiros-pendientes .item-pendiente button:hover {
+	background-color: #0056b3;
+}
+
+/* Archivo: style.css (Añadir al final) */
+
+/* Estilos para el panel de admin */
+.item-pendiente span {
+	/* Hace que cada <span> ocupe su propia línea */
+	display: block;
+	margin-bottom: 5px;
+}
+
+.item-pendiente .info-ip {
+	/* Estilo para la nueva info de IP */
+	font-size: 0.9em;
+	color: #666;
+	background-color: #f8f9fa;
+	padding: 3px 6px;
+}
+
+/* Archivo: style.css (Añadir al final) */
+
+/* Estilos para el nuevo <select> de país */
+select {
+	width: 100%;
+	padding: 12px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-sizing: border-box;
+	background-color: white; /* Asegura fondo blanco */
+	font-size: 1em; /* Asegura tamaño de fuente */
+	font-family: sans-serif; /* Asegura fuente */
+}
+
+/* Estilo para el <label> */
+label[for="retiro-pais"] {
+	display: block;
+	text-align: left;
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #555;
+}
+
+/* Estilo para la info de banco en el panel de admin */
+.item-pendiente .info-banco {
+	font-size: 0.9em;
+	color: #333;
+	margin-top: 5px;
+	background: #f4f4f4;
+	padding: 5px;
+	border-radius: 4px;
+}
+
+/* Archivo: style.css (Añadir al final) */
+
+/* Estilo para la info de banco en el historial del USUARIO */
+.info-banco-historial {
+	font-size: 0.9em;
+	color: #555;
+	margin-top: 5px;
+	padding-top: 5px;
+	border-top: 1px dashed #eee;
+}
+
+/* (MODIFICADO)
+   Asegúrate de que la info de banco del admin tenga 
+   texto alineado a la izquierda */
+.item-pendiente .info-banco {
+	font-size: 0.9em;
+	color: #333;
+	margin-top: 5px;
+	background: #f4f4f4;
+	padding: 8px;
+	border-radius: 4px;
+	text-align: left; /* Asegura alineación */
+}

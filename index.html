@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BlockChain - Banco Emisor de Crypto</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav id="navbar">
+			<h1>BlockChain 🏦</h1>
+			<div id="info-usuario-nav"></div>
+		</nav>
+
+		<div class="contenedor-principal">
+			<div id="seccion-login" class="card">
+				<h2>Inicio de Sesión</h2>
+				<input type="text" id="username" placeholder="Usuario" required />
+				<input type="password" id="password" placeholder="Contraseña" required />
+				<button onclick="iniciarSesion()">Acceder</button>
+				<p id="login-message" class="mensaje"></p>
+			</div>
+
+			<div id="seccion-balance" class="card" style="display: none">
+				<div class="balances-usuario">
+					<div class="balance-display balance-aprobado">
+						<h4>Balance Aprobado</h4>
+						<p class="monto-principal"><span id="balance-aprobado">0.00</span></p>
+					</div>
+					<div class="balance-display balance-pendiente">
+						<h4>Balance Pendiente</h4>
+						<p class="monto-secundario"><span id="balance-pendiente">0.00</span></p>
+					</div>
+				</div>
+
+				<hr />
+
+				<h2>1. Canjear Código (Depositar)</h2>
+				<input
+					type="text"
+					id="codigo-deposito"
+					placeholder="Ingresa tu código de depósito"
+				/>
+				<button onclick="canjearCodigo()">Canjear Código y Enviar Solicitud</button>
+				<p id="deposito-message" class="mensaje"></p>
+
+				<hr />
+
+				<h2>2. Retiro / Transferencia (Usar Créditos)</h2>
+				<input
+					type="number"
+					id="monto-transferir"
+					placeholder="Monto a Transferir"
+					min="1"
+					required
+				/>
+
+				<label for="retiro-pais">País de la cuenta:</label>
+				<select id="retiro-pais">
+					<option value="">Seleccione un país...</option>
+					<option value="República Dominicana">República Dominicana</option>
+					<option value="Estados Unidos">Estados Unidos</option>
+					<option value="España">España</option>
+					<option value="México">México</option>
+					<option value="Colombia">Colombia</option>
+				</select>
+
+				<input
+					type="text"
+					id="retiro-banco"
+					placeholder="Nombre de la Entidad Bancaria"
+					required
+				/>
+
+				<input
+					type="text"
+					id="retiro-cuenta"
+					placeholder="Número de Cuenta"
+					required
+				/>
+
+				<button onclick="realizarTransferencia()">
+					Solicitar Retiro y Generar Factura
+				</button>
+				<div id="transaccion-message" class="mensaje"></div>
+
+				<hr />
+
+				<h2>3. Historial de Transacciones</h2>
+				<div id="historial-transacciones">
+					<p>Cargando historial...</p>
+				</div>
+			</div>
+
+			<div id="seccion-admin" class="card" style="display: none">
+				<div class="balance-display" style="margin-top: 20px">
+					<h4>Inventario Remanente del Sistema</h4>
+					<p class="monto-principal" style="color: #007bff">
+						<span id="balance-sistema-admin"></span> Satochis
+					</p>
+				</div>
+
+				<hr />
+
+				<h2>1. Depósitos Pendientes de Aprobación</h2>
+				<div id="lista-pendientes"></div>
+
+				<hr />
+
+				<h2>2. Retiros Pendientes de Aprobación</h2>
+				<div id="lista-retiros-pendientes"></div>
+			</div>
+		</div>
+
+		<div id="popup-modal" class="modal-overlay" style="display: none">
+			<div class="modal-contenido">
+				<span class="modal-cerrar" onclick="cerrarPopup()">&times;</span>
+				<h2 id="popup-titulo"></h2>
+				<div id="popup-cuerpo"></div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
