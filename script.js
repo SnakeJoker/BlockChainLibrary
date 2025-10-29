@@ -6,7 +6,7 @@
 
 // *** ¡IMPORTANTE! Pega tus valores reales aquí ***
 const GIST_ID = "e289169bf8a72521e459f75a28050340";
-const GITHUB_TOKEN = "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";
+const GITHUB_TOKEN = "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";
 const NOMBRE_ARCHIVO_JSON = "estado_biblioteca.json";
 
 // --- No toques debajo de esta línea ---
@@ -655,3 +655,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	detectarPais(); // Detecta la IP/País
 	setInterval(cargarDatosDesdeURL, TIEMPO_DE_REFRESCO); // Configura el refresco automático
 });
+
